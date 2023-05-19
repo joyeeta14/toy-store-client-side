@@ -1,6 +1,8 @@
 // import React from 'react';
 //FcGoogle
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom"
+
 const Login = () => {
     return (
         <div className="my-4">
@@ -25,6 +27,9 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-warning">Login</button>
+                            </div>
+                            <div className="form-control mt-6">
+                              <p>New Here? Please <Link className="link link-hover font-bold text-xl" to='/register'>Register </Link>Here</p>
                             </div>
                             <div className="divider">OR</div>
                             <div className="form-control">
