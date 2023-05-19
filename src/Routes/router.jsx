@@ -30,11 +30,11 @@ const router = createBrowserRouter([
             path:'/blogs',
             element: <Blogs></Blogs>
         },
-        {
-            path:'/*',
-            element:<Error></Error>
-        },
       ]
+    },
+    {
+        path:'/*',
+        element:<Error></Error>
     },
   ]);
 
