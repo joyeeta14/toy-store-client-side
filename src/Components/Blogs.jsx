@@ -2,7 +2,7 @@
 
 const Blogs = () => {
     return (
-        <div>
+        <div className="my-5">
             <div className="flex flex-col w-full border-opacity-50">
                 <div className="grid p-4 h-auto card bg-base-300 rounded-box 
                 ">

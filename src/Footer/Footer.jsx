@@ -3,14 +3,18 @@
 const Footer = () => {
     return (
         <div>
-            <footer className=" p-5 bg-neutral text-white">
+            <footer className="p-5 bg-base-200 text-black">
                 <div className="footer">
                     <div>
-                        <div className="normal-case text-xl">
-                            <img className="w-40 mix-blend-color-dodge rounded-full" src="https://i.ibb.co/hm4y8qV/funStore.png" alt="" />
-                            <h3>Fun Store</h3>
+                        <div className="normal-case flex text-xl">
+                            <img className="w-12 mix-blend-hard-light  rounded-full" src="https://i.ibb.co/hm4y8qV/funStore.png" alt="" />
+                            Store
                         </div>
                         <p><br />Providing reliable toys since 1992</p>
+                        <p><br />Send any request to this email- <br />
+                        toystore1992@gmail.com </p>
+                        <p>Do tell us if you wanted to invest in our shop at this number - <br />
+                        +880-185-346-2709 </p>
                     </div>
                     <div>
                         <span className="footer-title">Company</span>
