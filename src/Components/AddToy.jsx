@@ -6,7 +6,7 @@ const AddToy = () => {
     useTitle('Add Toy');
     return (
         <div>
-            adddddddddddddd toyyyyyyyyyyyyyyyyyyyyy
+        
         </div>
     );
 };

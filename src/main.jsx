@@ -7,6 +7,8 @@ import AuthProvider from './AuthProvider/AuthProvider';
 import 'react-tooltip/dist/react-tooltip.css'
 
 
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
   <AuthProvider>

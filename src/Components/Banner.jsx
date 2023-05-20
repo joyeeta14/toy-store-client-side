@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
-        <div className="py-10">
+        <div className="px-40 ">
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row">
                     <img src="https://funnygoofycrap.com/wp-content/uploads/cartoonstore.jpeg" className="max-w-sm rounded-lg shadow-2xl" />
