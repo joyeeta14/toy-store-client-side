@@ -1,12 +1,16 @@
 // import React from 'react';
-import { useContext } from "react";
-import { Link } from "react-router-dom"
+import { useContext, useState } from "react";
+import { Link, Navigate } from "react-router-dom"
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
 
+  const navi=()=>{
+    return <Navigate to='/'></Navigate>;
+  }
   const {registerUser} = useContext(AuthContext);
+  const [user, setUser] = useState(null);
 
     const registerHandler =(event)=>{
         event.preventDefault();
@@ -30,13 +34,15 @@ const Register = () => {
 
         registerUser(email, password)
         .then(result => {
-          const user = result.user;
-          if(user){
+          const loggedUser = result.user;
+          if(loggedUser){
+            setUser(loggedUser);
             Swal.fire(
               'Good job!',
-              'You have successfully logged in!',
+              'You have successfully registered!',
               'success'
           )
+          form.reset();
           }
         })
         .catch(error => console.log(error.message))
@@ -75,7 +81,9 @@ const Register = () => {
           <input type="url" name="url" placeholder="Photo Url" className="input input-bordered" />
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-active">Register</button>
+          <button className="btn btn-active">
+          Register
+          </button>
         </div>
         <div className="form-control mt-6">
         <p>Already registered? <Link className="text-xl font-bold link link-hover" to='/login'>Login</Link> here! </p>

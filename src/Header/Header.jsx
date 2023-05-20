@@ -1,7 +1,22 @@
 // import React from 'react';
 // https://i.ibb.co/7yzWJGB/funStore.png
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import app from "../firebase/firebase.config";
+import {getAuth,  signOut } from "firebase/auth";
 const Header = () => {
+
+    const {user} = useContext(AuthContext);
+    const auth = getAuth(app);
+    const logOut =()=>{
+        signOut(auth)
+        .then()
+        .catch(error => {
+            console.log(error.message);
+        })
+    }
+
     return (
         <div>
             <div className="navbar bg-base-200  text-black">
@@ -59,7 +74,12 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="dropdown dropdown-end">
+                {user
+                 ?                     
+            //      <button onClick={logOut} className="btn ms-3 btn-outline btn-warning">
+            //      logOut
+            //  </button>
+                 <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
@@ -73,12 +93,16 @@ const Header = () => {
                                 </a>
                             </li>
                             <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
+                            <li>
+                                <button onClick={logOut}>LogOut</button>
+                            </li>
                         </ul>
                     </div>
+                    :
                     <button className="btn ms-3 btn-outline btn-warning">
-                        <Link to='/login'>Login</Link>
-                    </button>
+                    <Link to='/login'>Login</Link>
+                </button>
+                    }
                 </div>
             </div>
         </div>
