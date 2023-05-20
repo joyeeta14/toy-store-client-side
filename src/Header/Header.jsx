@@ -80,9 +80,12 @@ const Header = () => {
                  ?                     
                  <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
+                            <div className="w-10 rounded-full tooltip"
+                            data-tip="hello"
+                            >
                                 {
-                                    user.photoURL ? <img src={user?.photoURL} />
+                                    user.photoURL ? 
+                                    <img src={user?.photoURL} />
                                     :
                                     <img src='https://i.ibb.co/jDLGj2j/user-icon-g7b4aecd11-640.png'/>
                                 }
