@@ -4,11 +4,11 @@ const Footer = () => {
     return (
         <div>
             <footer className="p-5 bg-base-200 text-black">
-                <div className="footer">
+                <div className="footer items-center">
                     <div>
-                        <div className="normal-case flex text-xl">
-                            <img className="w-12 mix-blend-hard-light  rounded-full" src="https://i.ibb.co/hm4y8qV/funStore.png" alt="" />
-                            Store
+                        <div className="normal-case flex text-xl items-center">
+                            <img className="w-16 mix-blend-hard-light  rounded-full" src="https://i.ibb.co/VWR5RKh/slazzer-edit-image.png" alt="" />
+                             <p className="text-xl font-bold">Fun Store</p>
                         </div>
                         <p><br />Providing reliable toys since 1992</p>
                         <p><br />Send any request to this email- <br />

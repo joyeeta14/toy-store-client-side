@@ -24,16 +24,16 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li tabIndex={0}>
-                                <Link className="justify-between">
+                                <Link to='/addToy' className="justify-between">
                                     Add-A-Toy
                                 </Link>
                             </li>
                             <li><Link to='/blogs'>Blogs</Link></li>
                         </ul>
                     </div>
-                    <div className="btn btn-ghost normal-case flex-nowrap text-xl">
-                        <img className="w-12 mix-blend-hard-light rounded-full" src="https://i.ibb.co/hm4y8qV/funStore.png" alt="" />
-                        <h3>Store</h3>
+                    <div className="btn btn-ghost normal-case items-center flex-nowrap text-xl">
+                        <img className="w-16 mix-blend-hard-light rounded-full" src="https://i.ibb.co/VWR5RKh/slazzer-edit-image.png" alt="" />
+                        <h3 className="text-xl font-bold">Fun Store</h3>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -51,7 +51,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li tabIndex={0}>
-                                <Link className="justify-between">
+                                <Link to='/addToy' className="justify-between">
                                     Add-A-Toy
                                 </Link>
                             </li>

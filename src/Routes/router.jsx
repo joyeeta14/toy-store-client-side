@@ -6,6 +6,7 @@ import Login from "../LogOrReg/Login";
 import Register from "../LogOrReg/Register";
 import Error from "../Error404/Error";
 import Blogs from "../Components/Blogs";
+import AddToy from "../Components/AddToy";
 
 
 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         {
             path:'/blogs',
             element: <Blogs></Blogs>
+        },
+        {
+            path:'/addToy',
+            element: <AddToy></AddToy>
         },
       ]
     },
