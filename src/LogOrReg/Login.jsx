@@ -6,10 +6,13 @@ import app from "../firebase/firebase.config";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import useTitle from "../useHook/useTitle";
 // import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
 
+    
+useTitle('Login');
     const {loginUser}= useContext(AuthContext);
 
     const auth = getAuth(app);

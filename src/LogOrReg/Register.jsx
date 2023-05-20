@@ -3,11 +3,12 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom"
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../useHook/useTitle";
 // import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
-
+useTitle('Register');
 
   const {registerUser} = useContext(AuthContext);
   const [user, setUser] = useState(null);

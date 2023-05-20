@@ -19,7 +19,7 @@ const Rating = () => {
                         <ul className="menu p-4 w-80 border border-l-teal-200 bg-blue-200 text-base-content">
                             {/* <!-- Sidebar content here --> */}
                             <p>
-                                It will be great if you rate us according to your experience.We would try to improve ourself.Have faith on us and lets make it till the end.
+                            Your feedback matters! Help us improve the Fun-Store website!
                             </p>
                             <div>
                                 <div className="rating pt-4">
