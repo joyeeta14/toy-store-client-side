@@ -1,14 +1,14 @@
 // import React from 'react';
 import { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+// import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
-  const navi=()=>{
-    return <Navigate to='/'></Navigate>;
-  }
+
+
   const {registerUser} = useContext(AuthContext);
   const [user, setUser] = useState(null);
 
@@ -20,8 +20,17 @@ const Register = () => {
         const url = form.url.value;
         const password = form.password.value;
 
+      
+        if(email == null || password == null || name==null || url==null){
+          Swal.fire(
+            'Error!',
+            'You have to fill all the boxes!',
+            'error'
+          )
+          return;
+         } 
         // password validation
-        if(!/(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{6,}$/.test(password)){
+        else if(!/(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{6,}$/.test(password)){
           Swal.fire(
             'Weak Password!',
             'Your password must contain Minimum six characters, at least one uppercase letter and one number!',
@@ -31,11 +40,11 @@ const Register = () => {
         }
 
         // register user with email and password
-
         registerUser(email, password)
         .then(result => {
           const loggedUser = result.user;
           if(loggedUser){
+            console.log(loggedUser);
             setUser(loggedUser);
             Swal.fire(
               'Good job!',
@@ -46,13 +55,22 @@ const Register = () => {
           }
         })
         .catch(error => console.log(error.message))
-        
-    }
+        }
+
+
+                    // //update profile
+                    // updateProfile(user, {
+                    //   displayName: loggedUser.name, photoURL: loggedUser.url
+                    // }).then(() => {})
+                    // .catch((error) => {
+                    //   console.log(error);
+                    // });
+
 
 
     return (
-        <div>
-        <div className="hero min-h-screen bg-base-200 py-10 px-28">
+        <div className="bg-blue-200">
+        <div className="hero min-h-screen py-10 px-28">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <form onSubmit={registerHandler} className="card-body">
@@ -81,12 +99,12 @@ const Register = () => {
           <input type="url" name="url" placeholder="Photo Url" className="input input-bordered" />
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-active">
+          <button className="btn btn-info">
           Register
           </button>
         </div>
         <div className="form-control mt-6">
-        <p>Already registered? <Link className="text-xl font-bold link link-hover" to='/login'>Login</Link> here! </p>
+        <p>Already registered? <Link className="text-xl font-bold link link-hover link-info" to='/login'>Login</Link> here! </p>
         </div>
       </form>
     </div>

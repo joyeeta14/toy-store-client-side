@@ -1,11 +1,12 @@
-// import React from 'react';
-
-import { useContext } from "react";
+import Banner from "./Banner";
+import Rating from "./Rating";
 
 const Home = () => {
     return (
-        <div>
-            This is Homeeeeeeeeeeeeeeeee
+        <div className=" bg-blue-100">
+        <Banner></Banner>
+        <Rating></Rating>
+        
         </div>
     );
 };

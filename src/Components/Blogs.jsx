@@ -4,7 +4,7 @@ const Blogs = () => {
     return (
         <div className="my-5">
             <div className="flex flex-col w-full border-opacity-50">
-                <div className="grid p-4 h-auto card bg-base-300 rounded-box 
+                <div className="grid p-4 h-auto card bg-blue-100 rounded-box 
                 ">
                     <h1 className="text-xl font-semibold">Q-1: What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1> <br />
                     <h3 className="ps-7">
@@ -13,7 +13,7 @@ const Blogs = () => {
 
                 </div>
                 <div className="divider"></div>
-                <div className="grid p-4 h-auto card bg-base-300 rounded-box 
+                <div className="grid p-4 h-auto card bg-blue-100 rounded-box 
                 ">
                     <h1 className="text-xl font-semibold">Q-2: Compare SQL and NoSQL databases?</h1> <br />
                     <h3 className="ps-7">
@@ -22,7 +22,7 @@ const Blogs = () => {
 
                 </div>
                 <div className="divider"></div>
-                <div className="grid p-4 h-auto card bg-base-300 rounded-box 
+                <div className="grid p-4 h-auto card bg-blue-100 rounded-box 
                 ">
                     <h1 className="text-xl font-semibold">Q-3:What is express js? What is Nest JS? </h1> <br />
                     <h3 className="ps-7">
@@ -31,7 +31,7 @@ const Blogs = () => {
 
                 </div>
                 <div className="divider"></div>
-                <div className="grid p-4 h-auto card bg-base-300 rounded-box 
+                <div className="grid p-4 h-auto card bg-blue-100 rounded-box 
                 ">
                     <h1 className="text-xl font-semibold">Q-4:What is MongoDB aggregate and how does it work?</h1> <br />
                     <h3 className="ps-7">

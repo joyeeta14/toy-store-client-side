@@ -1,10 +1,12 @@
-// import React from 'react';
-// https://i.ibb.co/7yzWJGB/funStore.png
+
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import app from "../firebase/firebase.config";
 import {getAuth,  signOut } from "firebase/auth";
+
+
+
 const Header = () => {
 
     const {user} = useContext(AuthContext);
@@ -76,13 +78,15 @@ const Header = () => {
                 <div className="navbar-end">
                 {user
                  ?                     
-            //      <button onClick={logOut} className="btn ms-3 btn-outline btn-warning">
-            //      logOut
-            //  </button>
                  <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                {
+                                    user.photoURL ? <img src={user?.photoURL} />
+                                    :
+                                    <img src='https://i.ibb.co/jDLGj2j/user-icon-g7b4aecd11-640.png'/>
+                                }
+                                
                             </div>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral rounded-box w-52">
@@ -99,7 +103,7 @@ const Header = () => {
                         </ul>
                     </div>
                     :
-                    <button className="btn ms-3 btn-outline btn-warning">
+                    <button className="btn ms-3 btn-outline btn-info">
                     <Link to='/login'>Login</Link>
                 </button>
                     }

@@ -55,8 +55,8 @@ const Login = () => {
     }
 
     return (
-        <div className="my-4">
-            <div className="hero min-h-screen bg-base-200">
+        <div className="py-4 bg-blue-100">
+            <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={loginHandler} className="card-body">
@@ -76,14 +76,14 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-warning">Login</button>
+                                <button className="btn btn-info">Login</button>
                             </div>
                             <div className="form-control mt-6">
-                                <p>New Here? Please <Link className="link link-hover font-bold text-xl" to='/register'>Register </Link>Here</p>
+                                <p>New Here? Please <Link className="link link-hover link-info font-bold text-xl" to='/register'>Register </Link>Here</p>
                             </div>
                             <div className="divider">OR</div>
                             <div className="form-control">
-                                <button onClick={googleHandler} className="btn flex btn-outline btn-warning"><p>Sign In with Google</p>
+                                <button onClick={googleHandler} className="btn flex btn-outline btn-info"><p>Sign In with Google</p>
                                     <FcGoogle />
                                 </button>
                             </div>
