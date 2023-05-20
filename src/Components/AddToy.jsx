@@ -3,7 +3,7 @@
 import useTitle from "../useHook/useTitle";
 
 const AddToy = () => {
-    useTitle('Add Toy')
+    useTitle('Add Toy');
     return (
         <div>
             adddddddddddddd toyyyyyyyyyyyyyyyyyyyyy
