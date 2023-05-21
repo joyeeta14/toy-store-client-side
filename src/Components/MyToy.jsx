@@ -1,6 +1,6 @@
 // import React from 'react';
 
-import UpdateOrDeleteToys from "./UpdateOrDeleteToys";
+
 import { useLoaderData } from "react-router-dom";
 
 const MyToy = () => {

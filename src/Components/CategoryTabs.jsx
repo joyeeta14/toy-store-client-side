@@ -7,7 +7,7 @@ const CategoryTabs = () => {
     const [clicked, setClicked] = useState('mini-Car');
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/addToy/${clicked}`)
+        fetch(`https://toy-store-server-side-joyeeta14.vercel.app/addToy/${clicked}`)
         .then(res => res.json())
         .then(data => setCategory(data))
     },[clicked])
