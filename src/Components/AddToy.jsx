@@ -1,11 +1,12 @@
 // import React from 'react';
 
-import { Link } from "react-router-dom";
+
+
+import Swal from "sweetalert2";
 import useTitle from "../useHook/useTitle";
 
 const AddToy = () => {
     useTitle('Add Toy');
-
 
     const addHandler=(event)=>{
         event.preventDefault();
@@ -18,10 +19,32 @@ const AddToy = () => {
         const rating = form.rating.value;
         const description = form.description.value;
         const category = form.category.value;
-        const userInfos={toyPic,name,email,quantity, price, rating,description, category}
+        const toyName = form.toyName.value;
+        const userInfos={toyPic,name,email,quantity, price, rating,description, category, toyName};
 
-        console.log(userInfos);
+        fetch("http://localhost:5000/addToy",{
+            method: "POST",
+            headers: {
+                "content-type" : 'application/json'
+            },
+            body: JSON.stringify(userInfos)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire(
+                    'Good job!',
+                    'You have successfully added your toy!',
+                    'success'
+                  )
+                  form.reset();
+            }
+        })
+
+
     }
+
 
 
     return (
@@ -36,6 +59,12 @@ const AddToy = () => {
             <span className="label-text">Toy Picture</span>
           </label>
           <input type="url" name="toyPic" placeholder="Toy Picture" className="input input-bordered" />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Toy Name</span>
+          </label>
+          <input type="text" name="toyName" placeholder="Toy Name" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
