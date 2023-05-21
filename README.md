@@ -6,4 +6,4 @@
 - Database related
 - Backend  connected website 
 
-Project Live Link - 
+Project Live Link - https://inquisitive-conkies-b00982.netlify.app
