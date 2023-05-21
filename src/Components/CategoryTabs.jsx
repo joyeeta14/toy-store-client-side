@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const CategoryTabs = () => {
+
+    const [category, setCategory] = useState([]);
     const [clicked, setClicked] = useState('mini-Car');
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/addToy/${clicked}`)
+        .then(res => res.json())
+        .then(data => setCategory(data))
+    },[clicked])
+
+    const result = category.filter(data=> data.category == clicked);
+    console.log(result);
 
     const handleClick = (tabName) => {
         setClicked(tabName);
@@ -13,7 +24,7 @@ const CategoryTabs = () => {
                 <a onClick={()=>handleClick('mini-car')} 
                 className={clicked === 'mini-car' ? "tab tab-bordered tab-active": "tab tab-bordered"}>Mini Car</a>
                 <a onClick={()=> handleClick('lego-truck')} className={clicked === 'lego-truck' ? "tab tab-bordered tab-active": "tab tab-bordered"}>Lego Truck</a>
-                <a onClick={()=> handleClick('police-car')} className={clicked==='police-car' ? "tab tab-bordered tab-active": "tab tab-bordered"}>mini police car </a>
+ l                <a onClick={()=> handleClick('police-car')} className={clicked==='police-car' ? "tab tab-bordered tab-active": "tab tab-bordered"}>mini police car </a>
             </div>
         </div>
     );
